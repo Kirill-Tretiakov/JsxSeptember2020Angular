@@ -1,0 +1,35 @@
+<form [formGroup]="carForm" (ngSubmit)="action()">
+  <div [className]="'characteristic'">
+    <div [className]="'characteristic11'">
+      Model: <input placeholder="string" [formControl]="model">
+    </div>
+    <div *ngIf="model.errors?.required" [className]="'error'">
+      *
+    </div>
+  </div>
+  <div [className]="'characteristic'">
+    <div [className]="'characteristic11'">
+      Year: <input placeholder="4 digits" [formControl]="year">
+    </div>
+    <div *ngIf="year.errors?.required" [className]="'error'">
+      *
+    </div>
+    <div *ngIf="year.errors?.pattern?.requiredPattern" [className]="'error'">
+      Wrong year, should contain 4 digits
+    </div>
+  </div>
+  <div [className]="'characteristic'">
+    <div [className]="'characteristic11'">
+      Color: <input placeholder="string" [formControl]="color">
+    </div>
+    <div *ngIf="color.errors?.required" [className]="'error'">
+      *
+    </div>
+  </div>
+
+  <button [disabled]="carForm.invalid">Add new car</button>
+</form>
+
+<div>
+  <app-cars></app-cars>
+</div>

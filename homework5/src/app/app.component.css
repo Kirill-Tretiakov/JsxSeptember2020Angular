@@ -1,0 +1,17 @@
+.characteristic {
+  display: flex;
+  width: 600px;
+
+  margin-bottom: 10px;
+}
+
+.characteristic11 {
+  display: flex;
+  width: 300px;
+  justify-content: space-between;
+  margin-right: 5px;
+}
+
+.error {
+  color: red;
+}
